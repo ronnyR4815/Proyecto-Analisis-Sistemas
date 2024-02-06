@@ -16,7 +16,21 @@ function cargarProveedores() {
                 fila.insertCell().textContent = proveedor.anio;
                 fila.insertCell().textContent = proveedor.mes;
                 fila.insertCell().textContent = proveedor.compras;
+
+                const editButton = document.createElement('button');
+                editButton.classList.add('action-btn', 'edit-btn');
+                editButton.textContent = 'Editar';
+
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('action-btn', 'delete-btn');
+                deleteButton.textContent = 'Eliminar';
+
+                const actionCell = fila.insertCell();
+                actionCell.appendChild(editButton);
+                actionCell.appendChild(deleteButton);
             });
         })
         .catch(error => console.error('Error:', error));
 }
+
+

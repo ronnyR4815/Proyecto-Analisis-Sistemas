@@ -1,0 +1,74 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#addProveedor {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#addProveedor:hover {
+    background-color: #45a049; /* Color al pasar el ratón */
+}
+
+#proveedoresTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#proveedoresTable thead {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+#proveedoresTable thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+#proveedoresTable tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#proveedoresTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Animación al pasar el ratón por encima de las filas */
+#proveedoresTable tbody tr:hover {
+    background-color: #ddd;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para los botones de acción */
+.action-btn {
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
