@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function cerrarSesion() {
         sessionStorage.removeItem('usuario');
-        window.location.reload(); // Recargar la página para reflejar el estado de "no autenticado"
+        window.location.href = 'index.html';
     }
 
     if (sessionStorage.getItem('usuario')) {

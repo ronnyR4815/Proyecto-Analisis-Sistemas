@@ -1,3 +1,10 @@
+/*socket.on('whatsapp message', function(data) {
+    var messageContainer = document.getElementById('messageContainer');
+    var messageDiv = document.createElement('div');
+    messageDiv.textContent = data.sender + ": " + data.message;
+    messageContainer.appendChild(messageDiv);
+});*/
+
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('sendButton').addEventListener('click', function(event) {
         event.preventDefault(); // Previene el comportamiento predeterminado
@@ -15,12 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             console.log('Mensaje enviado:', data);
-            
             var messageContainer = document.getElementById('messageContainer');
             var messageDiv = document.createElement('div');
             messageDiv.textContent = "Tú: " + message; // Agrega "Tú: " antes del mensaje
             messageContainer.appendChild(messageDiv);
-            
         })
         .catch((error) => {
             console.error('Error:', error);

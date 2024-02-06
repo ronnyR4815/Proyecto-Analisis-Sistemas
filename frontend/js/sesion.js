@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function agregarEnlaceLogout() {
         const nav = document.querySelector('nav ul');
         const li = document.createElement('li');
-        li.innerHTML = '<a href="#" id="logout">Cerrar Sesión</a>';
+        li.innerHTML = '<a href="index.html" id="logout">Cerrar Sesión</a>';
         nav.appendChild(li);
     
         document.getElementById('logout').addEventListener('click', function(event) {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function cerrarSesion() {
         sessionStorage.removeItem('usuario');
-        window.location.reload();
+        window.location.href = 'index.html';
     }
 
     if (sessionStorage.getItem('usuario')) {

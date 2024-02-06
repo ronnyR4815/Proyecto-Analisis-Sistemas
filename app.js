@@ -19,14 +19,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
-io.on('connection', (socket) => {
-    
-  socket.on('send message', (message) => {
-      console.log('Mensaje recibido:', message);
-
-  });
-});
-
 // Configuración de la conexión a PostgreSQL
 const pool = new Pool({
   user: 'postgres',
@@ -63,6 +55,51 @@ app.get('/proveedores', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).send('Error al obtener datos');
+  }
+});
+
+app.delete('/proveedores/:id', async (req, res) => {
+  try {
+      const { id } = req.params;
+      // Consulta SQL para eliminar el proveedor con el ID especificado
+      const query = 'DELETE FROM proveedores WHERE id = $1';
+      // Ejecutar la consulta
+      await pool.query(query, [id]);
+      res.json({ success: true, message: 'Proveedor eliminado' });
+  } catch (err) {
+      console.error(err);
+      res.status(500).send('Error al eliminar el proveedor');
+  }
+});
+
+app.put('/proveedores/:id', async (req, res) => {
+  try {
+      const { id } = req.params;
+      const { nombre, anio, mes, compras } = req.body;
+
+      // Actualizar el proveedor en la base de datos
+      const query = 'UPDATE proveedores SET nombre = $1, anio = $2, mes = $3, compras = $4 WHERE id = $5';
+      await pool.query(query, [nombre, anio, mes, compras, id]);
+
+      res.json({ success: true, message: 'Proveedor actualizado' });
+  } catch (err) {
+      console.error(err);
+      res.status(500).send('Error al actualizar el proveedor');
+  }
+});
+
+app.post('/nuevo-proveedor', async (req, res) => {
+  try {
+      const { nombre, anio, mes, compras } = req.body;
+      
+      // Agregar el nuevo proveedor a la base de datos
+      const query = 'INSERT INTO proveedores (nombre, anio, mes, compras) VALUES ($1, $2, $3, $4)';
+      await pool.query(query, [nombre, anio, mes, compras]);
+
+      res.json({ success: true, message: 'Proveedor agregado' });
+  } catch (err) {
+      console.error(err);
+      res.status(500).send('Error al agregar el proveedor');
   }
 });
 
@@ -106,7 +143,7 @@ app.post('/logout', (req, res) => {
 app.post('/send-message', (req, res) => {
     const msg = req.body.message;
     const accountSid = 'AC73bbc2645229b27048dbf30eba0eedb7';
-    const authToken = '6331a58a70418e9b4fc81ebd98a2f7da';
+    const authToken = '801318be3f6dc25c69f95ed9d9d63560';
     const client = require('twilio')(accountSid, authToken);
 
     client.messages
@@ -118,14 +155,13 @@ app.post('/send-message', (req, res) => {
         .then(message => console.log(message.sid))
         .done();
     
-    //res.json({ message: msg });
-    res.json({ success: true, message: 'Mensaje recibido' });
+    res.json({ message: msg });
 });
 
 app.post('/whatsapp-webhook', (req, res) => {
   try {
-      const message = req.body.Body;
-      const sender = req.body.From;
+      const message = req.body.body;
+      const sender = req.body.from;
 
       console.log(message);
 
@@ -137,7 +173,6 @@ app.post('/whatsapp-webhook', (req, res) => {
       res.status(500).send('Ocurrió un error');
   }
 });
-
 
 // Iniciar el servidor
 app.listen(port, () => {
