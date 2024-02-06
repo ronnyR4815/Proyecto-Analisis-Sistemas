@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<title></title> 
+	<link rel="stylesheet" type="text/css" href="styles/header_style.css">
+    <link rel="stylesheet" type="text/css" href="styles/login.css">
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet"> 
+
+</head> 
+<body> 
+  <header>
+    <img src="img/Logotipo - Fhalconfood.webp" alt="Fhalconfood" id="logo">
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contactanos.html">Contactanos</a></li>
+        </ul>
+    </nav>
+  </header>
+
+	<div class="container-login"> 
+		<div class="wrap-login"> 
+			<form action="" method=""> 
+
+				<!-- LOGO --> 
+				<span class="login-form-title">Iniciar Sesión</span> 
+				<!--<img class="avatar"src="img/user.svg" alt="" align="center"> -->
+        <img class="avatar"src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="" align="center">
+					<!-- USUARIO --> 
+				<div class="wrap-input100"> 
+					<input class="input100" type="text" name="txtUsuario" placeholder="Usuario">	 
+					<span class="focus-efecto"></span> 
+				</div> 
+				<!-- CONTRASEÑA --> 
+				<div class="wrap-input100"> 
+					<input class="input100" type="password" name="txtPassword" placeholder="Contraseña"> 
+					<span class="focus-efecto"></span> 
+				</div> 
+				<!-- BOTÓN --> 
+				<div class="container-login-form-btn"> 
+					<div class="wrap-login-form-btn"> 
+						<div class="login-form-bgbtn"></div> 
+						<button type="submit" name="btnEntrar" class="login-form-btn">ENTRAR</button> 
+					</div> 
+				</div>
+        <div id="errorMensaje" style="color: red; display: none;"></div>
+
+			</form> 
+		</div> 
+	</div>
+
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>SOBRE FHALCONFOOD</h3>
+            <hr>
+            <p>Fhalconfood es una empresa con más de 23 años dentro del mercado HORECA, sirviendo con gusto a nuestros clientes con productos de la mejor calidad.</p>
+          </div>
+          <div class="footer-section">
+            <h3>NOVEDADES</h3>
+            <hr>
+            <!-- Información o enlaces de novedades -->
+          </div>
+          <div class="footer-section">
+            <h3>ENLACES RÁPIDOS</h3>
+            <hr>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contactanos.html">Contactanos</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>CONTACTOS</h3>
+            <hr>
+            <div class="contact-info">
+              <p>CONSULTAS E INFORMACIÓN</p>
+              <a href="mailto:rroserof@est.ups.edu.ec">rroserof@est.ups.edu.ec</a>
+              <a href="tel:+593958905131">(+593) 95 890 5131</a>
+            </div>
+          </div>
+        </div>
+    </footer>
+</body> 
+<script src="js/login.js"></script>
+</html> 

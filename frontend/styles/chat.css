@@ -1,0 +1,40 @@
+.chat-popup {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.chat-popup textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+
+.chat-popup .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+.chat-popup .cancel {
+    background-color: red;
+}
+
+.chat-popup .btn:hover, .open-button:hover {
+    opacity: 1;
+}

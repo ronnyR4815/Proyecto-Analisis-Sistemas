@@ -1,0 +1,125 @@
+h1 {
+    font-size: 114px;
+}
+h6 {
+    font-size: 27px;
+}
+.div_class_index {
+    text-align: center; /* Alinea el contenido en el centro horizontalmente */
+    margin-bottom: 5%;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title1 {
+    margin-right: 10%;
+    color:  #044373;
+}
+#title2 {
+    margin-left: 10%;
+    color: #f5681b ;
+}
+#title3 {
+    margin-left: 30%;
+    color:  #044373;
+}
+
+.body-background {
+    font-family: Arial, sans-serif; /* Cambiar por la fuente deseada */
+    background-color:  #044373 ; /* Color de fondo */
+}
+.container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar contenedor */
+    padding: 20px;
+}
+.heading {
+    color: #ffffff; /* Color del texto */
+    text-align: center; /* Centrar texto */
+    font-size: 2em; /* Tamaño del texto */
+    margin-bottom: 50px; /* Espacio después del título */
+}
+.card {
+    background-color: #04344c; /* Fondo de las tarjetas */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra de la tarjeta */
+}
+.card-image {
+    background-color: #eee; /* Fondo de la imagen, cambiar por imágenes reales */
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Altura de la imagen */
+    border-radius: 50%; /* Hacer la imagen redonda */
+    margin: 0 auto; /* Centrar imagen */
+}
+.card-title {
+    color: #ffffff; /* Color del título de la tarjeta */
+    text-align: center; /* Centrar título */
+    font-size: 1.5em; /* Tamaño del título */
+}
+.card-text {
+    text-align: center; /* Centrar texto */
+    color: #dedede; /* Color del texto */
+}
+.button {
+    display: block; /* Hacer que el enlace sea un bloque para ocupar el espacio */
+    width: max-content; /* El ancho según el contenido */
+    margin: 10px auto; /* Centrar botón */
+    padding: 10px 20px; /* Espacio interno del botón */
+    background-color: #007bff; /* Fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    text-align: center; /* Centrar texto */
+    text-decoration: none; /* Quitar subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra del botón */
+}
+
+/* Zona Contactanos INDEX */
+
+.contact-section {
+    background-color: #f0f0f0; /* Color de fondo de la sección */
+    padding: 40px 0; /* Espaciado superior e inferior */
+    font-family: Arial, sans-serif; /* Fuente de la sección */
+    text-align: center; /* Alineación del texto */
+}
+.contact-title {
+    color: #333; /* Color del título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+.contact-subtitle {
+    color: #555; /* Color del subtítulo */
+    margin-bottom: 30px; /* Espacio debajo del subtítulo */
+}
+.contact-info {
+    display: flex; /* Distribución en línea de los elementos */
+    justify-content: center; /* Alineación horizontal centrada */
+    gap: 20px; /* Espacio entre los elementos */
+}
+.contact-block {
+    width: 200px; /* Ancho de cada bloque de contacto */
+    padding: 20px; /* Espaciado interior de cada bloque */
+    background-color: #ffffff; /* Fondo de cada bloque */
+    border-radius: 10px; /* Bordes redondeados de cada bloque */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de cada bloque */
+}
+.contact-icon {
+    font-size: 24px; /* Tamaño del icono */
+    margin-bottom: 20px; /* Espacio debajo del icono */
+}
+.contact-details1 {
+    font-size: 14px; /* Tamaño del texto de detalles */
+    color: #000000; /* Color del texto de detalles */
+}
+.contact-details2 {
+    font-size: 14px; /* Tamaño del texto de detalles */
+    color: #ffffff; /* Color del texto de detalles */
+}
+.social-media-block {
+    background-color: #3b5998; /* Ejemplo de fondo para el bloque de redes sociales */
+    color: #fff; /* Color del texto en el bloque de redes sociales */
+}
