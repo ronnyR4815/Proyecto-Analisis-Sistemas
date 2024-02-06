@@ -121,3 +121,35 @@ function guardarCambios(fila, id) {
     })
     .catch(error => console.error('Error:', error));
 }
+
+function descargarCSV() {
+    const tabla = document.getElementById('proveedoresTable');
+    let csvContent = "data:text/csv;charset=utf-8,";
+
+    // Recorrer las filas de la tabla
+    for (let i = 0; i < tabla.rows.length; i++) {
+        let row = [], cols = tabla.rows[i].cells;
+
+        // Recorrer las columnas
+        for (let j = 0; j < cols.length; j++) {
+            // Evitar incluir los botones en el CSV
+            if (j < cols.length - 1) {
+                row.push(cols[j].innerText);
+            }
+        }
+
+        // Unir cada columna con coma y añadir salto de línea al final
+        csvContent += row.join(",") + "\r\n";
+    }
+
+    // Crear un enlace para descargar el CSV
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "proveedores.csv");
+    document.body.appendChild(link); // Requerido para FF
+
+    // Simular clic para iniciar la descarga y luego eliminar el enlace
+    link.click();
+    document.body.removeChild(link);
+}
